@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cap Finance · mon espace carrière</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b3b33'/%3E%3Cpath d='M9 21l5-6 4 3 5-8' stroke='%23d9f2c4' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="auth" class="auth" hidden>
+  <div class="auth-card">
+    <div class="logo"><span class="mark"></span>Cap Finance</div>
+    <h1>Mon espace carrière</h1>
+    <p class="muted">Offres, candidatures, réseau et entretiens, au même endroit.</p>
+    <form id="loginForm">
+      <label>Adresse e-mail<input type="email" id="lEmail" autocomplete="email" required></label>
+      <label>Mot de passe<input type="password" id="lPass" autocomplete="current-password" required minlength="8"></label>
+      <button class="btn pri wide" type="submit" id="lBtn">Se connecter</button>
+      <button class="btn ghost wide" type="button" id="sBtn">Créer mon compte (première utilisation)</button>
+      <button class="link" type="button" id="rBtn">Mot de passe oublié ?</button>
+      <p id="lMsg" class="msg" role="status"></p>
+    </form>
+  </div>
+</div>
+<div id="cfg" class="auth" hidden><div class="auth-card"><h1>Configuration manquante</h1><p>Le fichier <code>config.js</code> ne contient pas encore l'adresse de ta base Supabase. Voir le guide d'installation (README).</p></div></div>
+
+<div id="app" class="app" hidden>
+  <nav class="side" id="side">
+    <div class="logo"><span class="mark"></span>Cap Finance</div>
+    <div class="navgrp">Recherche</div>
+    <a href="#accueil" data-r="accueil">Tableau de bord</a>
+    <a href="#offres" data-r="offres">Toutes les offres <b class="n" id="nNew" hidden></b></a>
+    <a href="#marche-cache" data-r="marche-cache">Marché caché</a>
+    <a href="#analyse" data-r="analyse">Analyse et comparaison</a>
+    <div class="navgrp">Candidatures</div>
+    <a href="#candidatures" data-r="candidatures">Mes candidatures</a>
+    <a href="#kanban" data-r="kanban">Kanban</a>
+    <a href="#entretiens" data-r="entretiens">Préparation entretiens</a>
+    <a href="#documents" data-r="documents">Documents</a>
+    <div class="navgrp">Réseau</div>
+    <a href="#reseau" data-r="reseau">Mon réseau</a>
+    <a href="#prospection" data-r="prospection">Prospection et messages</a>
+    <a href="#entreprises" data-r="entreprises">Entreprises</a>
+    <div class="navgrp">Organisation</div>
+    <a href="#calendrier" data-r="calendrier">Calendrier <b class="n" id="nTask" hidden></b></a>
+    <a href="#parametres" data-r="parametres">Paramètres et données</a>
+  </nav>
+  <div class="wrap">
+    <header class="top">
+      <button class="btn ghost menu" id="menuBtn" aria-label="Menu">☰</button>
+      <div class="search"><input type="search" id="gq" placeholder="Rechercher une offre, une entreprise, un contact, un document…" aria-label="Recherche globale" autocomplete="off"><div id="gres" class="gres" hidden></div></div>
+      <span class="sync" id="syncInfo"></span>
+      <button class="btn ghost bell" id="bellBtn" aria-label="Notifications">Notifications <b class="n" id="nNotif" hidden></b></button>
+      <button class="btn ghost" id="outBtn">Déconnexion</button>
+    </header>
+    <main id="main"></main>
+  </div>
+</div>
+<aside id="drawer" class="drawer" aria-label="Fiche"></aside>
+<div id="scrim" class="scrim" hidden></div>
+<dialog id="dlg"><form method="dialog" id="dlgf"></form></dialog>
+<div id="toast" class="toast" role="status"></div>
+<script src="config.js"></script>
+<script src="content.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
