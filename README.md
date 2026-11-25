@@ -1,12 +1,14 @@
 # Cap Finance — mon espace carrière
 
+**Adresse de l'application : https://banban56300.github.io/espace-stages/**
+
 Application web personnelle pour piloter une recherche de stage en finance : offres (publiées, opportunités cachées, entreprises à prospecter), candidatures, Kanban, réseau, prospection et messages, entreprises, préparation aux entretiens, documents, calendrier, analyse et comparaison.
 
 ## Architecture
 
 | Élément | Solution | Coût |
 |---|---|---|
-| Interface web | Site statique (HTML, CSS, JavaScript sans framework) hébergé sur GitHub Pages | Gratuit |
+| Interface web | Site statique (HTML, CSS, JavaScript sans framework) hébergé sur GitHub Pages (branche gh-pages, copie du dossier web/) | Gratuit |
 | Base de données | Supabase (PostgreSQL), projet `cap-finance`, région Paris | Gratuit (500 Mo) |
 | Connexion | Supabase Auth (e-mail + mot de passe), un seul compte autorisé | Gratuit |
 | Documents | Supabase Storage, espace privé `documents` (50 Mo par fichier, 1 Go au total) | Gratuit |
